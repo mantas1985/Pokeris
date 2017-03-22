@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Vartotojo vardas:" />
+    <EditText
+        android:id="@+id/VartotojoVardas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></EditText>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Vartotojo pavardė:" />
+    <EditText
+        android:id="@+id/pavarde"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></EditText>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Jūsų el-paštas" />
+    <EditText
+        android:id="@+id/pastas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></EditText>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sukurkite naują slaptažodį" />
+    <EditText
+        android:id="@+id/Slaptazodis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"></EditText>
+    <Button
+        android:id="@+id/registracija"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Patvirtinti" />
+
+</LinearLayout>

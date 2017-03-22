@@ -60,6 +60,14 @@
             android:id="@+id/prisijungti"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Prisijungti" />
+            android:text="Prisijungti"
+            android:onClick="prisijungimas2"/>
+
+        <Button
+            android:id="@+id/registracija"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Registracija"
+            android:onClick="registracija2"/>
     </LinearLayout>
 </RelativeLayout>

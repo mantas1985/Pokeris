@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
         Button mygtukasRegistracija = (Button) findViewById(R.id.registracija);
         mygtukasRegistracija.setOnClickListener(new View.OnClickListener() {
 

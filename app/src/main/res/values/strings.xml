@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">Pokeris</string>
+
+    <string name="tipas">Tipas</string>
+    <string name="tipas_Mokamas">Mokamas</string>
+    <string name="Tipas_Nemokamas">Nemokamas</string>
+    <string name="tipas_Turnyras">Turnyras</string>
+
+    <string name="patvirtinimas">Patvirtinimas</string>
+    <string name="patvirtinimas_Taip">Taip</string>
+    <string name="patvirtinimas_Ne">Ne</string>
+
+    <string name="gerimas">Gerimas</string>
+    <string name="gerimas_Viskis">Viskis</string>
+    <string name="gerimas_Alus">Alus</string>
+    <string name="gerimas_Sultys">Sultys</string>
+    <string name="gerimas_CocaCola">CocaCola</string>
+
+   <string name="Saugoti">Saugoti</string>
 </resources>

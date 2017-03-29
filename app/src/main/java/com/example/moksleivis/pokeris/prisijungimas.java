@@ -32,7 +32,7 @@ public class prisijungimas extends AppCompatActivity {
         });
     }
     public void naujas_irasas2(){
-        Intent intent = new Intent (prisijungimas.this,naujas_irasas.class);
+        Intent intent = new Intent (prisijungimas.this,naujas_irasasActivity.class);
         startActivity(intent);
     }
     public void paieska2(){

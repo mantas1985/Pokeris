@@ -17,7 +17,7 @@
         </activity>
         <activity android:name=".prisijungimas" />
         <activity android:name=".paieska" />
-        <activity android:name=".naujas_irasas" />
+        <activity android:name=".naujas_irasasActivity" />
         <activity android:name=".registracija"></activity>
     </application>
 

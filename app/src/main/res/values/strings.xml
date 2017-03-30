@@ -16,5 +16,8 @@
     <string name="gerimas_Sultys">Sultys</string>
     <string name="gerimas_CocaCola">CocaCola</string>
 
+    <string name="error_invalid_username">Blogas prisijungimo vardas</string>
+    <string name="error_invalid_password">Blogas slaptažodis</string>
+
    <string name="Saugoti">Saugoti</string>
 </resources>

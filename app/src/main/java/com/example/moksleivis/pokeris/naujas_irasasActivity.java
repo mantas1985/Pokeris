@@ -55,23 +55,23 @@ public class naujas_irasasActivity extends AppCompatActivity {
             patvirtinimas[0] = (RadioButton) findViewById(selectedId);
 
             StringBuffer gerimas = new StringBuffer();
-            gerimas.append("Viskis")
-                    .append(gerimasViskis.isChecked());
+            gerimas.append(getResources().getString(R.string.gerimas_Viskis) + "-")
+                    .append(gerimasViskis.isChecked() +"\n");
 
-            gerimas.append("Alus")
-                    .append(gerimasAlus.isChecked());
+            gerimas.append(getResources().getString(R.string.gerimas_Alus) + "-")
+                    .append(gerimasAlus.isChecked()+"\n");
 
-            gerimas.append("CocaCola")
-                    .append(gerimasCocaCola.isChecked());
+            gerimas.append(getResources().getString(R.string.gerimas_CocaCola) + "-")
+                    .append(gerimasCocaCola.isChecked()+"\n");
 
-            gerimas.append("Sultys")
-                    .append(gerimasSultys.isChecked());
+            gerimas.append(getResources().getString(R.string.gerimas_Sultys) + "-")
+                    .append(gerimasSultys.isChecked()+" \n");
 
 
             Toast.makeText(naujas_irasasActivity.this,
                     String.valueOf(tipai.getSelectedItem()) + "\n" +
                             gerimas.toString() +
-                            patvirtinimas[0].getText(), Toast.LENGTH_SHORT).show();
+                            patvirtinimas[0].getText(), Toast.LENGTH_LONG).show() ;
 
 
         }//onclick

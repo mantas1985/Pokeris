@@ -47,7 +47,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Žaidimo tipas::" />
+                android:text="Žaidimo tipas:" />
 
             <Spinner
                 android:id="@+id/tipaiSelect"
@@ -65,7 +65,7 @@
                 android:layout_height="wrap_content"
                 android:text="Alus"/>
             <CheckBox
-                android:id="@+id/gerimasCocaColaAlus"
+                android:id="@+id/gerimasCocaCola"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="CocaCola"/>

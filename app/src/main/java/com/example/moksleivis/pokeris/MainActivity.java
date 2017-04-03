@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         mPasswordView = (EditText) findViewById(R.id.slaptazodis);
         mUsernameView.setError(null);
         mPasswordView.setError(null);
-
+//kazkas
         Button mygtukasPrisijungimas = (Button) findViewById(R.id.prisijungti);
         mygtukasPrisijungimas.setOnClickListener(new View.OnClickListener() {
 

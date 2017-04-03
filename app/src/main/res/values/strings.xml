@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Pokeris</string>
 
+    <string name="vardas">Vartotojo vardas</string>
+
     <string name="tipas">Tipas</string>
     <string name="tipas_Mokamas">Mokamas</string>
     <string name="Tipas_Nemokamas">Nemokamas</string>

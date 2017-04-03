@@ -14,12 +14,12 @@ import java.util.regex.Pattern;
 import static android.R.string.cancel;
 
 public class MainActivity extends AppCompatActivity {
-private EditText mUsernameView;
-private EditText mPasswordView;
-private View focusView = null;
+    private EditText mUsernameView;
+    private EditText mPasswordView;
+
     private    String username;
     private    String password;
-    private boolean cancel = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +36,7 @@ private View focusView = null;
             @Override
             public void onClick(View arg0) {
                 prisijungimas2();
+
             }
         });
 
@@ -55,6 +56,9 @@ private View focusView = null;
         username =mUsernameView.getText().toString();
         password =mPasswordView.getText().toString();
 
+        boolean cancel = false;
+        View focusView = null;
+
         Toast.makeText(MainActivity.this,username + "" + password,
                 Toast.LENGTH_SHORT).show();
 
@@ -71,8 +75,6 @@ private View focusView = null;
         if (cancel) {
             focusView.requestFocus();
         } else {
-
-
             Intent intent = new Intent(MainActivity.this, prisijungimas.class);
             startActivity(intent);
         }
@@ -81,6 +83,7 @@ private View focusView = null;
         Intent intent = new Intent (MainActivity.this, registracija.class);
         startActivity(intent);
     }
+
     private boolean isValid(String credentials){
 
         final String CREDENTIALS_PATTERN = "^([0-9a-z]{3,15})+$";

@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
@@ -18,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class naujas_irasasActivity extends AppCompatActivity {
-
+private EditText Naujas_vardas;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +35,7 @@ public class naujas_irasasActivity extends AppCompatActivity {
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         tipai.setAdapter(dataAdapter);
 
+    final EditText vardas = (EditText) findViewById(R.id.naujas_Vardas);
 
     final CheckBox gerimasViskis = (CheckBox) findViewById(R.id.gerimasViskis);
     final CheckBox gerimasAlus = (CheckBox) findViewById(R.id.gerimasAlus);
@@ -69,6 +71,7 @@ public class naujas_irasasActivity extends AppCompatActivity {
 
 
             Toast.makeText(naujas_irasasActivity.this,
+                    vardas.getText() +"\n" +
                     String.valueOf(tipai.getSelectedItem()) + "\n" +
                             gerimas.toString() +
                             patvirtinimas[0].getText(), Toast.LENGTH_LONG).show() ;

@@ -17,6 +17,8 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class naujas_irasasActivity extends AppCompatActivity {
 private EditText Naujas_vardas;
@@ -35,7 +37,8 @@ private EditText Naujas_vardas;
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         tipai.setAdapter(dataAdapter);
 
-    final EditText vardas = (EditText) findViewById(R.id.naujas_Vardas);
+     Naujas_vardas = (EditText) findViewById(R.id.naujas_Vardas);
+        Naujas_vardas.setError(null);
 
     final CheckBox gerimasViskis = (CheckBox) findViewById(R.id.gerimasViskis);
     final CheckBox gerimasAlus = (CheckBox) findViewById(R.id.gerimasAlus);
@@ -52,6 +55,18 @@ private EditText Naujas_vardas;
         public void onClick(View v) {
             //get selected radio button from RadioGroup
             int selectedId = patvirtinimai.getCheckedRadioButtonId();
+
+            boolean cancel = false;
+            View focusView = null;
+
+            String vardas =Naujas_vardas.getText().toString();
+
+            if (!isValid(vardas)) {
+                Naujas_vardas.setError(getString(R.string.error_invalid_zaidejoNikas));
+                focusView = Naujas_vardas;
+                cancel = true;
+            }
+
 
             //find the radio button by returned ID
             patvirtinimas[0] = (RadioButton) findViewById(selectedId);
@@ -70,16 +85,27 @@ private EditText Naujas_vardas;
                     .append(gerimasSultys.isChecked()+" \n");
 
 
-            Toast.makeText(naujas_irasasActivity.this,
-                    vardas.getText() +"\n" +
-                    String.valueOf(tipai.getSelectedItem()) + "\n" +
-                            gerimas.toString() +
-                            patvirtinimas[0].getText(), Toast.LENGTH_LONG).show() ;
-
+            if (cancel) {
+                focusView.requestFocus();
+            } else {
+                Toast.makeText(naujas_irasasActivity.this,
+                                Naujas_vardas.getText() +"\n" +
+                                String.valueOf(tipai.getSelectedItem()) + "\n" +
+                                gerimas.toString() +
+                                patvirtinimas[0].getText(), Toast.LENGTH_LONG).show() ;
+            }
 
         }//onclick
     });//saugoti
 
     }//oncreate
+    private boolean isValid(String credentials){
+
+        final String CREDENTIALS_PATTERN = "^([0-9a-z]{3,15})+$";
+        Pattern pattern = Pattern.compile(CREDENTIALS_PATTERN);
+
+        Matcher matcher = pattern.matcher(credentials);
+        return matcher.matches();
+    }
 }//class
 

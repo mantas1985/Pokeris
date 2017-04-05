@@ -59,8 +59,8 @@ public class MainActivity extends AppCompatActivity {
         boolean cancel = false;
         View focusView = null;
 
-        Toast.makeText(MainActivity.this,username + "" + password,
-                Toast.LENGTH_SHORT).show();
+       // Toast.makeText(MainActivity.this,username + "" + password,
+               // Toast.LENGTH_SHORT).show();
 
         if (!isValid(username)) {
             mUsernameView.setError(getString(R.string.error_invalid_username));

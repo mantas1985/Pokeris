@@ -20,6 +20,9 @@
 
     <string name="error_invalid_username">Blogas prisijungimo vardas</string>
     <string name="error_invalid_password">Blogas slaptažodis</string>
+    <string name="error_invalid_zaidejoNikas">Blogas vartotojo vardas</string>
+    <string name="error_invalid_Elpastas">Blogas elektroninis paštas</string>
+
 
    <string name="Saugoti">Saugoti</string>
 </resources>

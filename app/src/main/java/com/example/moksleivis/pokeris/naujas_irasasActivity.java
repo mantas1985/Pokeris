@@ -70,7 +70,7 @@ public class naujas_irasasActivity extends AppCompatActivity {
             }
 
 
-            //find the radio button by returned ID
+            //find the radio button by returned ID ...
             patvirtinimas[0] = (RadioButton) findViewById(selectedId);
 
             StringBuffer gerimai = new StringBuffer();

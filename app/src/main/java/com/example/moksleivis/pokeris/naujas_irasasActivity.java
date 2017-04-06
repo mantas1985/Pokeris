@@ -21,7 +21,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class naujas_irasasActivity extends AppCompatActivity {
-private EditText Naujas_vardas;
+
+    private EditText Naujas_vardas;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,28 +73,39 @@ private EditText Naujas_vardas;
             //find the radio button by returned ID
             patvirtinimas[0] = (RadioButton) findViewById(selectedId);
 
-            StringBuffer gerimas = new StringBuffer();
-            gerimas.append(getResources().getString(R.string.gerimas_Viskis) + "-")
-                    .append(gerimasViskis.isChecked() +"\n");
+            StringBuffer gerimai = new StringBuffer();
 
-            gerimas.append(getResources().getString(R.string.gerimas_Alus) + "-")
-                    .append(gerimasAlus.isChecked()+"\n");
+            if (gerimasViskis.isChecked()) {
+                gerimai.append(getResources().getString(R.string.gerimas_Viskis))
+                        .append(" ");
+            }
+            if(gerimasAlus.isChecked()) {
+                gerimai.append(getResources().getString(R.string.gerimas_Alus))
+                        .append(" ");
+            }
+            if(gerimasCocaCola.isChecked()) {
+                gerimai.append(getResources().getString(R.string.gerimas_CocaCola))
+                        .append(" ");
+            }
+            if(gerimasSultys.isChecked()) {
+                gerimai.append(getResources().getString(R.string.gerimas_Sultys))
+                        .append(" ");
 
-            gerimas.append(getResources().getString(R.string.gerimas_CocaCola) + "-")
-                    .append(gerimasCocaCola.isChecked()+"\n");
-
-            gerimas.append(getResources().getString(R.string.gerimas_Sultys) + "-")
-                    .append(gerimasSultys.isChecked()+" \n");
-
-
+            }
             if (cancel) {
                 focusView.requestFocus();
+
             } else {
+                //String vardas, String patvirtinimas, String tipas, String gerimas
+                // sukuriamas vartotojo iraso objektas, pagal susikurta klase
+                Pokeris poker = new Pokeris(vardas, patvirtinimas[0].getText().toString(),
+                        String.valueOf(tipai.getSelectedItem()),gerimai.toString());
+
                 Toast.makeText(naujas_irasasActivity.this,
-                                Naujas_vardas.getText() +"\n" +
-                                String.valueOf(tipai.getSelectedItem()) + "\n" +
-                                gerimas.toString() +
-                                patvirtinimas[0].getText(), Toast.LENGTH_LONG).show() ;
+                                poker.getVardas() +"\n" +
+                                poker.getPatvirtinimas() + "\n" +
+                                poker.getTipas() + "\n" +
+                                poker.getGerimas(), Toast.LENGTH_LONG).show() ;
             }
 
         }//onclick

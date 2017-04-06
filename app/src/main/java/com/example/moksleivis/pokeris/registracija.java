@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -79,8 +80,15 @@ public class registracija extends AppCompatActivity {
         if (cancel) {
         focusView.requestFocus();
     }else {
-        Intent intent = new Intent(registracija.this, MainActivity.class);
-        startActivity(intent);
+          //String vardas, String pastas, String password
+            User vartotojas = new User (username,email,password);
+            Toast.makeText(registracija.this,
+                            vartotojas.getVardas() +"\n" +
+                            vartotojas.getPastas() + "\n" +
+                            vartotojas.getPassword() + "\n"
+                             ,Toast.LENGTH_LONG).show() ;
+            Intent intent = new Intent(registracija.this, MainActivity.class);
+            startActivity(intent);
     }
     }
 

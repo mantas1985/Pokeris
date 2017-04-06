@@ -58,6 +58,10 @@
                 android:id="@+id/tipaiSelect"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pasirinkite gėrimą:" />
             <CheckBox
                 android:id="@+id/gerimasViskis"
                 android:layout_width="match_parent"

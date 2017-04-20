@@ -1,6 +1,8 @@
 package com.example.moksleivis.pokeris;
 
+import android.app.ProgressDialog;
 import android.content.Context;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
@@ -16,6 +18,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -23,6 +26,7 @@ import java.util.regex.Pattern;
 public class naujas_irasasActivity extends AppCompatActivity {
 
     private EditText Naujas_vardas;
+    private static final String REGISTER_URL = "http://mantas.byethost31.com/Mobile/newEntry.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,7 +104,7 @@ public class naujas_irasasActivity extends AppCompatActivity {
                 // sukuriamas vartotojo iraso objektas, pagal susikurta klase
                 Pokeris poker = new Pokeris(vardas, patvirtinimas[0].getText().toString(),
                         String.valueOf(tipai.getSelectedItem()),gerimai.toString());
-
+                register(poker.getVardas(),poker.getPatvirtinimas(),poker.getTipas(),poker.getGerimas());
                 Toast.makeText(naujas_irasasActivity.this,
                                 poker.getVardas() +"\n" +
                                 poker.getPatvirtinimas() + "\n" +
@@ -120,5 +124,44 @@ public class naujas_irasasActivity extends AppCompatActivity {
         Matcher matcher = pattern.matcher(credentials);
         return matcher.matches();
     }
+
+    private void register(String vardas, String patvirtinimas, String tipas , String gerimas) {
+        class NewEntry extends AsyncTask<String, Void, String> {
+            ProgressDialog loading;
+            DB database = new DB();
+
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+                loading = ProgressDialog.show(naujas_irasasActivity.this, "Please Wait",null, true, true);
+            }
+
+            @Override
+            protected void onPostExecute(String s) {
+                super.onPostExecute(s);
+                loading.dismiss();
+                Toast.makeText(getApplicationContext(),s,Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            protected String doInBackground(String... params) {
+            //pirmas stringas raktas antras reiksme
+                HashMap<String, String> data = new HashMap<String,String>();
+                data.put("vardas",params[0]);
+                data.put("patvirtinimas",params[1]);
+                data.put("tipas",params[2]);
+                data.put("gerimas",params[3]);
+
+                String result = database.sendPostRequest(REGISTER_URL,data);
+
+                return  result;
+            }
+        }
+
+        NewEntry ru = new NewEntry();
+        ru.execute(vardas,patvirtinimas,tipas,gerimas);
+    }
+
 }//class
 

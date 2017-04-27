@@ -16,8 +16,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".prisijungimas" />
-        <activity android:name=".paieska" />
+        <activity android:name=".SearchActivity" />
         <activity android:name=".naujas_irasasActivity" />
         <activity android:name=".registracija"></activity>
     </application>

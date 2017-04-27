@@ -6,12 +6,9 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import static android.R.string.cancel;
 
 public class MainActivity extends AppCompatActivity {
     private EditText mUsernameView;
@@ -75,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
         if (cancel) {
             focusView.requestFocus();
         } else {
-            Intent intent = new Intent(MainActivity.this, prisijungimas.class);
+            Intent intent = new Intent(MainActivity.this, SearchActivity.class);
             startActivity(intent);
         }
     }

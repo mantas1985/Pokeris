@@ -51,6 +51,12 @@
             android:layout_height="wrap_content"
             android:inputType="textPassword"></EditText>
 
+        <CheckBox
+            android:id="@+id/remember_me"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Prisiminti mane"/>
+
         <Space
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

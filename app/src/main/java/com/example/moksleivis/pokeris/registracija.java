@@ -89,7 +89,7 @@ public class registracija extends AppCompatActivity {
 
           //String vardas, String pastas, String password
             User vartotojas = new User (username,email,password);
-            registerUser(vartotojas.getVardas(), vartotojas.getPastas(), vartotojas.getPassword());
+            registerUser(vartotojas.getVardas(), vartotojas.getPassword(), vartotojas.getPastas());
             Toast.makeText(registracija.this,
                             vartotojas.getVardas() +"\n" +
                             vartotojas.getPastas() + "\n" +

@@ -129,6 +129,7 @@ public class naujas_irasasActivity extends AppCompatActivity {
         class NewEntry extends AsyncTask<String, Void, String> {
             ProgressDialog loading;
             DB database = new DB();
+            Loginas naujas = new Loginas(getApplicationContext());
 
 
             @Override
@@ -152,6 +153,7 @@ public class naujas_irasasActivity extends AppCompatActivity {
                 data.put("patvirtinimas",params[1]);
                 data.put("tipas",params[2]);
                 data.put("gerimas",params[3]);
+                data.put("username",naujas.getUsername());
 
                 String result = database.sendPostRequest(REGISTER_URL,data);
 

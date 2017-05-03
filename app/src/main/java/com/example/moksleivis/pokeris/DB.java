@@ -56,7 +56,9 @@ public class DB {
             if (responseCode == HttpsURLConnection.HTTP_OK) {
                 BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
                 response = br.readLine();
-            } else {
+            } else if(responseCode == HttpsURLConnection.HTTP_NOT_AUTHORITATIVE){
+               response = "203";
+            }else{
                 response = "Error Registering";
             }
         } catch (Exception e) {

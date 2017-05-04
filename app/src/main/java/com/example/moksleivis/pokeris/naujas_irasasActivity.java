@@ -118,7 +118,7 @@ public class naujas_irasasActivity extends AppCompatActivity {
     }//oncreate
     private boolean isValid(String credentials){
 
-        final String CREDENTIALS_PATTERN = "^([0-9a-z]{3,15})+$";
+        final String CREDENTIALS_PATTERN = "^([0-9a-zA-Z]{3,15})+$";
         Pattern pattern = Pattern.compile(CREDENTIALS_PATTERN);
 
         Matcher matcher = pattern.matcher(credentials);
